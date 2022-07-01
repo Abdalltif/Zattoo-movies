@@ -1,6 +1,6 @@
 object Versions {
     //Core
-    const val kotlin = "1.4.21"
+    const val kotlin = "1.6.20"
     const val dagger = "2.38.1"
     const val navigation = "2.3.2"
     const val retrofit = "2.9.0"
