@@ -9,14 +9,6 @@ import com.zattoo.movies.data.model.Movie
 import com.zattoo.movies.data.model.Price
 import kotlinx.coroutines.runBlocking
 
-fun fetchMovieList(service: MovieService) = runBlocking {
-    service.fetchMovieList()
-}
-
-fun fetchMovieListOffers(service: MovieService) = runBlocking {
-    service.fetchMovieListOffers()
-}
-
 fun createMovies(
     movieDetails: MovieListEntity,
     movieListOffers: MovieListOffers
