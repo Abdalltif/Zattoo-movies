@@ -69,6 +69,7 @@ dependencies {
     implementation Deps.multidex
     implementation Deps.timber
     implementation Deps.espressoIdlingResource
+    implementation Deps.fragment
 
     testImplementation Deps.jUnit
     testImplementation Deps.mockK

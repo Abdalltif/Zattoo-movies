@@ -16,6 +16,7 @@ object Versions {
     const val legacy = "1.0.0"
     const val retrofitCoroutines = "0.9.2"
     const val multidex = "2.0.1"
+    const val fragment = "1.4.1"
 
     //UI
     const val constraintlayout = "2.0.4"
@@ -59,6 +60,7 @@ object Deps {
         "android.arch.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUi = "android.arch.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
 
     //Dagger
     const val dagger_hilt = "com.google.dagger:hilt-android:${Versions.hilt}"

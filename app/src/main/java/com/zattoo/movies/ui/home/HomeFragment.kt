@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.zattoo.movies.MoviesApp
 import com.zattoo.movies.R
 import com.zattoo.movies.data.remote.MovieService
@@ -27,6 +28,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home)  {
     private val adapter by lazy { HomeAdapter() }
+    private val viewModel: HomeViewModel by viewModels()
 
     @Inject
     lateinit var networkUtils: NetworkUtils
