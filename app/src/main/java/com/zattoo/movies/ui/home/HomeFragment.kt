@@ -13,8 +13,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.zattoo.movies.MoviesApp
 import com.zattoo.movies.R
-import com.zattoo.movies.data.MovieService
-import com.zattoo.movies.data.home.Movie
+import com.zattoo.movies.data.remote.MovieService
+import com.zattoo.movies.data.model.Movie
 import com.zattoo.movies.databinding.FragmentHomeBinding
 import com.zattoo.movies.utils.Constants.ANIMATION_DURATION
 import com.zattoo.movies.utils.NetworkUtils

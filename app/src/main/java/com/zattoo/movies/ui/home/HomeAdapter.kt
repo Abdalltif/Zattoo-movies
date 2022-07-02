@@ -3,7 +3,7 @@ package com.zattoo.movies.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.zattoo.movies.data.home.Movie
+import com.zattoo.movies.data.model.Movie
 import com.zattoo.movies.databinding.ListItemMoviesBinding
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {

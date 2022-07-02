@@ -1,4 +1,4 @@
-package com.zattoo.movies.data
+package com.zattoo.movies.data.model
 
 import com.squareup.moshi.Json
 

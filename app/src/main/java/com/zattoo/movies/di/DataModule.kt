@@ -1,6 +1,6 @@
 package com.zattoo.movies.di
 
-import com.zattoo.movies.data.MovieService
+import com.zattoo.movies.data.remote.MovieService
 import com.zattoo.movies.ui.home.HomeAdapter
 import dagger.Module
 import dagger.Provides

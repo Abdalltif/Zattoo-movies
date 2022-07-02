@@ -9,7 +9,7 @@
 
         <variable
             name="movies"
-            type="com.zattoo.movies.data.home.Movie" />
+            type="com.zattoo.movies.data.model.Movie" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

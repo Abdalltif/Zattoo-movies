@@ -1,4 +1,4 @@
-package com.zattoo.movies.data
+package com.zattoo.movies.data.model
 
 data class MovieListEntity(
     val movie_data: List<MovieData>

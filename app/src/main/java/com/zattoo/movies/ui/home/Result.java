@@ -1,6 +1,6 @@
 package com.zattoo.movies.ui.home;
 
-import com.zattoo.movies.data.home.Movie;
+import com.zattoo.movies.data.model.Movie;
 
 import java.util.List;
 
