@@ -25,9 +25,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
-    @Inject
-    lateinit var adapter: HomeAdapter
+class HomeFragment : Fragment(R.layout.fragment_home)  {
+    private val adapter by lazy { HomeAdapter() }
 
     @Inject
     lateinit var networkUtils: NetworkUtils
@@ -62,7 +61,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun initUiElements() {
-        adapter = HomeAdapter()
         binding.recyclerView.adapter = adapter
         binding.swipeRefreshLayout.setOnRefreshListener { fetchData() }
     }

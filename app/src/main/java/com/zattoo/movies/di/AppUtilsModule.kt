@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppUtilsModule {
+object AppUtilsModule {
     @Singleton
     @Provides
     fun provideNetworkUtils(@ApplicationContext context: Context): NetworkUtils {
