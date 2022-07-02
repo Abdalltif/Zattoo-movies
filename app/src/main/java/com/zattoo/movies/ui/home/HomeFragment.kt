@@ -21,8 +21,10 @@ import com.zattoo.movies.utils.NetworkUtils
 import com.zattoo.movies.utils.createMovies
 import com.zattoo.movies.utils.fetchMovieList
 import com.zattoo.movies.utils.fetchMovieListOffers
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     @Inject
     lateinit var adapter: HomeAdapter
@@ -50,12 +52,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (context!!.applicationContext as MoviesApp).applicationComponent
-            .inject(this)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         initUiElements()
     }
 

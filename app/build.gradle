@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -52,8 +53,9 @@ dependencies {
     implementation Deps.legacySupport
     implementation Deps.glide
     annotationProcessor Deps.glide
-    implementation Deps.dagger_core
-    kapt Deps.dagger_compiler
+    implementation Deps.dagger_hilt
+    implementation Deps.dagger_hilt_lifecycle
+    kapt Deps.hilt_compiler
     implementation Deps.retrofit
     implementation Deps.retrofitCoroutines
     implementation Deps.retrofitMoshi

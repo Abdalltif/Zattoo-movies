@@ -1,7 +1,8 @@
 object Versions {
     //Core
     const val kotlin = "1.6.20"
-    const val dagger = "2.38.1"
+    const val hilt = "2.40.5"
+    const val dagger_lifecycle = "1.0.0-alpha03"
     const val navigation = "2.3.2"
     const val retrofit = "2.9.0"
     const val okhttp = "4.9.0"
@@ -35,8 +36,8 @@ object Versions {
 
 object AppMetaData {
     const val id = "com.zattoo.movies"
-    const val compileSdkVersion = 29
-    const val targetSdkVersion = 29
+    const val compileSdkVersion = 30
+    const val targetSdkVersion = 30
     const val minSdkVersion = 21
     const val buildToolsVersion = "30.0.3"
     const val versionCode = 1
@@ -61,8 +62,9 @@ object Deps {
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 
     //Dagger
-    const val dagger_core = "com.google.dagger:dagger:${Versions.dagger}"
-    const val dagger_compiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+    const val dagger_hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val dagger_hilt_lifecycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.dagger_lifecycle}"
+    const val hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.hilt}"
 
     //Networking
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
