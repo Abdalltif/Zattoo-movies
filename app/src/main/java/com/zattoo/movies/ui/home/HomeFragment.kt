@@ -47,6 +47,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         binding.lifecycleOwner = this
+        binding.viewModel = viewModel
 
         return binding.root
     }
@@ -77,7 +78,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
             handleError()
         } else {
             success = result
-            adapter.setList(this)
+//            adapter.setList(this)
         }
     }
 

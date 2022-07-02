@@ -12,10 +12,10 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     var listMovie: List<Movie> = emptyList()
 
-    fun setList(fragment: HomeFragment){
-        val diffUtil = AppDiffUtil(listMovie, fragment.movies)
+    fun setList(newList: List<Movie>){
+        val diffUtil = AppDiffUtil(listMovie, newList)
         val diffResults = DiffUtil.calculateDiff(diffUtil)
-        listMovie  = fragment.movies
+        listMovie  = newList
         diffResults.dispatchUpdatesTo(this)
     }
 
