@@ -71,11 +71,9 @@ dependencies {
     implementation Deps.espressoIdlingResource
 
     testImplementation Deps.jUnit
-    testImplementation Deps.mockitoKotlin
-    testImplementation Deps.mockitoCore
-    testImplementation Deps.mockitoInline
+    testImplementation Deps.mockK
     testImplementation Deps.coreTesting
-    testImplementation Deps.assertJ
+    testImplementation Deps.truth
     testImplementation Deps.coroutinesTest
 
     androidTestImplementation Deps.androidxJunit

@@ -25,10 +25,7 @@ class MovieRepositoryImpl(
                     movieService.fetchMovieListOffers()
                 }
 
-                val movies = createMovies(
-                    moviesResponse.await().body()!!.movie_data,
-                    movieOffersResponse.await().body()!!
-                )
+                val movies = createMovies(moviesResponse.await(), movieOffersResponse.await())
                 Resource.Success(movies)
 
             }

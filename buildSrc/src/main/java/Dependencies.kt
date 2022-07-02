@@ -24,11 +24,10 @@ object Versions {
     const val swipelayout = "1.1.0"
 
     //Test
-    const val assertj = "3.6.2"
+    const val truth = "1.1.3"
     const val coreTesting = "2.1.0"
-    const val mockito = "3.5.13"
-    const val mockitoKotlin = "2.2.0"
-    const val coroutinesTest = "1.4.2"
+    const val mockK = "1.12.1"
+    const val coroutinesTest = "1.6.0"
     const val jUnit = "4.12"
     const val espresso = "3.3.0"
     const val androidxJunit = "1.1.2"
@@ -96,12 +95,10 @@ object Deps {
 
     //Test
     const val jUnit = "junit:junit:${Versions.jUnit}"
-    const val mockitoCore = "org.mockito:mockito-core:3.0.0${Versions.mockito}"
-    const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
-    const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
+    const val mockK = "io.mockk:mockk:${Versions.mockK}"
+    const val truth = "com.google.truth:truth:${Versions.truth}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
-    const val assertJ = "org.assertj:assertj-core:${Versions.assertj}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.androidxJunit}"
     const val espressoIdlingResource = "androidx.test.espresso:espresso-idling-resource:${Versions.espresso}"

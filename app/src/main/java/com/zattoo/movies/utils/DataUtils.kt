@@ -18,11 +18,11 @@ fun fetchMovieListOffers(service: MovieService) = runBlocking {
 }
 
 fun createMovies(
-    movieDetails: List<MovieListEntity.MovieData>,
+    movieDetails: MovieListEntity,
     movieListOffers: MovieListOffers
 ): List<Movie> {
     return movieListOffers.offers.mapNotNull { offers ->
-        val details = movieDetails.find { it.movie_id == offers.movie_id }
+        val details = movieDetails.movie_data.find { it.movie_id == offers.movie_id }
         details?.let {
             val movieOfferPrice = offers.price
             val currency = Currency(movieOfferPrice.last().toString())

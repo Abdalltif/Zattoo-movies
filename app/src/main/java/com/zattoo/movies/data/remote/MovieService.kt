@@ -7,8 +7,8 @@ import retrofit2.http.GET
 
 interface MovieService {
     @GET("movie_offers.json")
-    suspend fun fetchMovieListOffers(): Response<MovieListOffers>
+    suspend fun fetchMovieListOffers(): MovieListOffers
 
     @GET("movie_data.json")
-    suspend fun fetchMovieList(): Response<MovieListEntity>
+    suspend fun fetchMovieList(): MovieListEntity
 }

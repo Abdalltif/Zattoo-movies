@@ -163,11 +163,11 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
                 val responseMovieListOffers = fetchMovieListOffers(
                     movieService
                 )
-                if (responseMovieDataList.isSuccessful && responseMovieListOffers.isSuccessful) {
+                if (responseMovieDataList.movie_data.isNotEmpty() && responseMovieListOffers.offers.isNotEmpty()) {
                     Result.Success(
                         createMovies(
-                            responseMovieDataList.body()!!.movie_data,
-                            responseMovieListOffers.body()!!
+                            responseMovieDataList,
+                            responseMovieListOffers
                         )
                     )
                 } else {
