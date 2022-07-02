@@ -1,6 +1,6 @@
 package com.zattoo.movies.data.model
 
-data class MovieListEntity(
+data class MoviesDataResponse(
     val movie_data: List<MovieData>
 ) {
     data class MovieData(

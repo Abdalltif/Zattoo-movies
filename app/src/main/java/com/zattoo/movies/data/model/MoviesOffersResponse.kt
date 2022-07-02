@@ -2,7 +2,7 @@ package com.zattoo.movies.data.model
 
 import com.squareup.moshi.Json
 
-data class MovieListOffers(
+data class MoviesOffersResponse(
     val image_base: String,
     @Json(name = "movie_offers")
     val offers: List<MovieOffer>

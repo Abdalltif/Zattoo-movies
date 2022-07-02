@@ -3,7 +3,7 @@ package com.zattoo.movies.data.repository
 import com.google.common.truth.Truth.assertThat
 import com.zattoo.movies.core.movieOffersResponseMockProvider
 import com.zattoo.movies.core.moviesResponseMockProvider
-import com.zattoo.movies.data.model.MovieListEntity
+import com.zattoo.movies.data.model.MoviesDataResponse
 import com.zattoo.movies.data.remote.MovieService
 import com.zattoo.movies.utils.Resource
 import io.mockk.coEvery
@@ -65,7 +65,7 @@ class MovieRepositoryImplTest {
 
     @Test
     fun `fetch movies should return empty list`() = runTest {
-        coEvery { movieService.fetchMovieList() } returns MovieListEntity(emptyList())
+        coEvery { movieService.fetchMovieList() } returns MoviesDataResponse(emptyList())
         coEvery { movieService.fetchMovieListOffers() } returns movieOffersResponseMockProvider()
 
         val result = repository.fetchMovies()

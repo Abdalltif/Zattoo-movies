@@ -5,7 +5,7 @@ import io.mockk.every
 import io.mockk.mockk
 import kotlin.random.Random
 
-fun movieOffersResponseMockProvider() = mockk<MovieListOffers> {
+fun movieOffersResponseMockProvider() = mockk<MoviesOffersResponse> {
     every { image_base } returns "na"
     every { offers } returns listOf(
         mockk {
@@ -29,7 +29,7 @@ fun movieOffersResponseMockProvider() = mockk<MovieListOffers> {
     )
 }
 
-fun moviesResponseMockProvider() = mockk<MovieListEntity> {
+fun moviesResponseMockProvider() = mockk<MoviesDataResponse> {
     every { movie_data } returns listOf(
         mockk {
             every { movie_id } returns 1

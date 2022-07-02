@@ -4,15 +4,15 @@ import com.google.common.truth.Truth.assertThat
 import com.zattoo.movies.core.movieOffersResponseMockProvider
 import com.zattoo.movies.core.moviesResponseMockProvider
 import com.zattoo.movies.data.model.Movie
-import com.zattoo.movies.data.model.MovieListEntity
-import com.zattoo.movies.data.model.MovieListOffers
+import com.zattoo.movies.data.model.MoviesDataResponse
+import com.zattoo.movies.data.model.MoviesOffersResponse
 import io.mockk.verifyOrder
 import org.junit.Test
 
 class DataUtilsKtTest {
 
-    private lateinit var moviesResponse: MovieListEntity
-    private lateinit var movieOffersResponse: MovieListOffers
+    private lateinit var moviesResponse: MoviesDataResponse
+    private lateinit var movieOffersResponse: MoviesOffersResponse
 
     @Test
     fun `mapResponseToMovieList should return list of movies`() {
@@ -20,8 +20,8 @@ class DataUtilsKtTest {
         movieOffersResponse = movieOffersResponseMockProvider()
 
         val result : List<Movie> = createMovies(
-            movieDetails = moviesResponse,
-            movieListOffers = movieOffersResponse
+            moviesDataResponse = moviesResponse,
+            moviesOffersResponse = movieOffersResponse
         )
 
         verifyOrder {
@@ -38,8 +38,8 @@ class DataUtilsKtTest {
         movieOffersResponse = movieOffersResponseMockProvider()
 
         val result : List<Movie> = createMovies(
-            movieDetails = moviesResponse,
-            movieListOffers = movieOffersResponse
+            moviesDataResponse = moviesResponse,
+            moviesOffersResponse = movieOffersResponse
         )
 
         assertThat(result.size).isEqualTo(2)
@@ -48,12 +48,12 @@ class DataUtilsKtTest {
     @Test
     fun `mapResponseToMovieList should return empty list`() {
 
-        moviesResponse = MovieListEntity(emptyList())
-        movieOffersResponse = MovieListOffers("", emptyList())
+        moviesResponse = MoviesDataResponse(emptyList())
+        movieOffersResponse = MoviesOffersResponse("", emptyList())
 
         val result : List<Movie> = createMovies(
-            movieDetails = moviesResponse,
-            movieListOffers = movieOffersResponse
+            moviesDataResponse = moviesResponse,
+            moviesOffersResponse = movieOffersResponse
         )
 
         assertThat(result.size).isEqualTo(0)

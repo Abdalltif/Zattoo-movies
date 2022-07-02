@@ -1,18 +1,18 @@
 package com.zattoo.movies.utils
 
-import com.zattoo.movies.data.model.MovieListEntity
-import com.zattoo.movies.data.model.MovieListOffers
+import com.zattoo.movies.data.model.MoviesDataResponse
+import com.zattoo.movies.data.model.MoviesOffersResponse
 import com.zattoo.movies.data.model.Currency
 import com.zattoo.movies.data.model.Image
 import com.zattoo.movies.data.model.Movie
 import com.zattoo.movies.data.model.Price
 
 fun createMovies(
-    movieDetails: MovieListEntity,
-    movieListOffers: MovieListOffers
+    moviesDataResponse: MoviesDataResponse,
+    moviesOffersResponse: MoviesOffersResponse
 ): List<Movie> {
-    return movieListOffers.offers.mapNotNull { offers ->
-        val details = movieDetails.movie_data.find { it.movie_id == offers.movie_id }
+    return moviesOffersResponse.offers.mapNotNull { offers ->
+        val details = moviesDataResponse.movie_data.find { it.movie_id == offers.movie_id }
         details?.let {
             val movieOfferPrice = offers.price
             val currency = Currency(movieOfferPrice.last().toString())
@@ -22,7 +22,7 @@ fun createMovies(
                 title = it.title,
                 subtitle = it.sub_title,
                 price = Price(price, currency),
-                image = Image(movieListOffers.image_base + offers.image),
+                image = Image(moviesOffersResponse.image_base + offers.image),
                 availability = offers.available
             )
         }
