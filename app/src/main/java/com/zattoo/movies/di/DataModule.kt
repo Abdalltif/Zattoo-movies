@@ -1,28 +1,23 @@
 package com.zattoo.movies.di
 
 import com.zattoo.movies.data.remote.MovieService
-import com.zattoo.movies.ui.home.HomeAdapter
+import com.zattoo.movies.data.repository.MoviesRepository
+import com.zattoo.movies.data.repository.MovieRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
+import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DataModule {
-    @Singleton
-    @Provides
-    fun provideNetworkClient(): Retrofit = createNetworkClient(BASE_URL)
+object DataModule {
 
-    @Singleton
     @Provides
-    fun provideMovieService(retrofit: Retrofit): MovieService = retrofit.create(MovieService::class.java)
-
     @Singleton
-    @Provides
-    fun provideHomeAdapter(): HomeAdapter = HomeAdapter()
+    fun provideMoviesRepository(
+        api: MovieService,
+        @DispatcherModule.IoDispatcher ioDispatcher: CoroutineDispatcher
+    ): MoviesRepository = MovieRepositoryImpl(api, ioDispatcher)
 }
-
-private const val BASE_URL = "https://movies-assessment.firebaseapp.com/"
