@@ -1,3 +1,5 @@
+package com.zattoo.movies.utils
+
 import androidx.recyclerview.widget.DiffUtil
 import com.zattoo.movies.data.model.Movie
 

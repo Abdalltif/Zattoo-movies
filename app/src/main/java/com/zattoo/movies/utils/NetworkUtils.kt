@@ -12,7 +12,7 @@ import androidx.lifecycle.MutableLiveData
 class NetworkUtils(private val context: Context) : ConnectivityManager.NetworkCallback() {
 
     private val networkLiveData: MutableLiveData<Boolean> = MutableLiveData()
-    var isConnected = false
+    private var isConnected = false
     private lateinit var connectivityManager: ConnectivityManager
 
     fun getNetworkLiveData(): LiveData<Boolean> {

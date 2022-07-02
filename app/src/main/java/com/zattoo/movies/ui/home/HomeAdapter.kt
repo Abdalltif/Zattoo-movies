@@ -1,6 +1,6 @@
 package com.zattoo.movies.ui.home
 
-import AppDiffUtil
+import com.zattoo.movies.utils.AppDiffUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -10,7 +10,7 @@ import com.zattoo.movies.databinding.ListItemMoviesBinding
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
-    var listMovie: List<Movie> = emptyList()
+    private var listMovie: List<Movie> = emptyList()
 
     fun setList(newList: List<Movie>){
         val diffUtil = AppDiffUtil(listMovie, newList)

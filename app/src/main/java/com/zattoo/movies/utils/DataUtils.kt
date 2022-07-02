@@ -2,12 +2,10 @@ package com.zattoo.movies.utils
 
 import com.zattoo.movies.data.model.MovieListEntity
 import com.zattoo.movies.data.model.MovieListOffers
-import com.zattoo.movies.data.remote.MovieService
 import com.zattoo.movies.data.model.Currency
 import com.zattoo.movies.data.model.Image
 import com.zattoo.movies.data.model.Movie
 import com.zattoo.movies.data.model.Price
-import kotlinx.coroutines.runBlocking
 
 fun createMovies(
     movieDetails: MovieListEntity,
