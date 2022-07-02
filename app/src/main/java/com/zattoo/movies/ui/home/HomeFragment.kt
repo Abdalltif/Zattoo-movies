@@ -43,6 +43,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         return binding.root
     }
 
+    override fun onPause() {
+        super.onPause()
+        networkUtils.unRegisterNetworkCallback()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupNetworkObserver()
+    }
+
     private fun setupStateObserver() {
         viewModel.uiState.observe(viewLifecycleOwner) { homeState ->
             when (homeState.uiState) {
@@ -63,6 +73,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.recyclerView.apply {
             adapter = homeAdapter
             layoutManager = LinearLayoutManager(activity)
+        }
+    }
+
+    private fun setupNetworkObserver() {
+        networkUtils.getNetworkLiveData().observe(viewLifecycleOwner) { isConnected ->
+            if (!isConnected) {
+                showNotConnectedStatus()
+            } else {
+                showConnectedStatus()
+                viewModel.fetchMovies()
+            }
         }
     }
 

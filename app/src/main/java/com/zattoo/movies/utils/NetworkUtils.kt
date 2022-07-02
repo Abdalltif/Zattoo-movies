@@ -12,9 +12,11 @@ import androidx.lifecycle.MutableLiveData
 class NetworkUtils(private val context: Context) : ConnectivityManager.NetworkCallback() {
 
     private val networkLiveData: MutableLiveData<Boolean> = MutableLiveData()
+    var isConnected = false
+    private lateinit var connectivityManager: ConnectivityManager
 
     fun getNetworkLiveData(): LiveData<Boolean> {
-        val connectivityManager =
+        connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -24,7 +26,7 @@ class NetworkUtils(private val context: Context) : ConnectivityManager.NetworkCa
             connectivityManager.registerNetworkCallback(builder.build(), this)
         }
 
-        var isConnected = false
+        isConnected = false
 
         connectivityManager.allNetworks.forEach { network ->
             val networkCapability = connectivityManager.getNetworkCapabilities(network)
@@ -42,11 +44,18 @@ class NetworkUtils(private val context: Context) : ConnectivityManager.NetworkCa
         return networkLiveData
     }
 
+    fun unRegisterNetworkCallback() = connectivityManager.unregisterNetworkCallback(this)
+
     override fun onAvailable(network: Network) {
         networkLiveData.postValue(true)
     }
 
     override fun onLost(network: Network) {
+        networkLiveData.postValue(false)
+    }
+
+    override fun onUnavailable() {
+        super.onUnavailable()
         networkLiveData.postValue(false)
     }
 }
